@@ -451,7 +451,7 @@ def test_password_store(export):
     LOG.debug("Testing if password store is installed and configured")
 
     try:
-        p = Popen(["pass"], stdout=PIPE, stderr=PIPE)
+        p = Popen(["gopass"], stdout=PIPE, stderr=PIPE)
     except OSError as e:
         if e.errno == 2:
             LOG.error("Password store is not installed and exporting was requested")
@@ -514,7 +514,7 @@ def export_pass(to_export):
             LOG.debug("Inserting pass '%s' '%s'", passname, data)
 
             # NOTE --force is used. Existing passwords will be overwritten
-            cmd = ["pass", "insert", "--force", "--multiline", passname]
+            cmd = ["gopass", "insert", "--force", "--multiline", passname]
 
             LOG.debug("Running command '%s' with stdin '%s'", cmd, data)
 
