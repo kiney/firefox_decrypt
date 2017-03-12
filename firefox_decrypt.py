@@ -524,7 +524,7 @@ def export_pass(to_export):
             if p.returncode != 0:
                 LOG.error("ERROR: passwordstore exited with non-zero: %s", p.returncode)
                 LOG.error("Stdout/Stderr was '%s' '%s'", out, err)
-                raise Exit(Exit.PASSSTORE_ERROR)
+                #raise Exit(Exit.PASSSTORE_ERROR)
 
             LOG.debug("Successfully exported '%s'", passname)
 
